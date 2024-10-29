@@ -10,13 +10,13 @@ namespace DevFreela.Application.Validators
         {
             RuleFor(p => p.Email)
                 .EmailAddress()
-                .WithMessage("Email Inválido!");
+                .WithMessage("E-mail não válido!");
 
             RuleFor(p => p.Password)
                 .Must(ValidPassword)
-                .WithMessage("Senha deve conter pelo menos 8 caracteres, uma letra maiúscula, uma letra minúscula, um número e um caractere especial.");
+                .WithMessage("Senha deve conter pelo menos 8 caracteres, um número, uma letra maiúscula, uma minúscula, e um caractere especial");
 
-            RuleFor(u => u.FullName)
+            RuleFor(p => p.FullName)
                 .NotEmpty()
                 .NotNull()
                 .WithMessage("Nome é obrigatório!");
@@ -24,7 +24,7 @@ namespace DevFreela.Application.Validators
 
         public bool ValidPassword(string password)
         {
-            var regex = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$");
+            var regex = new Regex(@"^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!*@#$%^&+=]).*$");
 
             return regex.IsMatch(password);
         }
