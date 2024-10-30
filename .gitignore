@@ -3,7 +3,13 @@
 ################################################################################
 
 /.vs
-/DevFreela.API
-/DevFreela.Application
-/DevFreela.Core
-/DevFreela.Infrastructure
+/DevFreela.API/bin/Debug/net8.0
+/DevFreela.API/obj
+/DevFreela.Application/bin/Debug/net8.0
+/DevFreela.Application/obj
+/DevFreela.Core/bin/Debug/net8.0
+/DevFreela.Core/obj
+/DevFreela.Infrastructure/bin/Debug/net8.0
+/DevFreela.Infrastructure/obj
+/DevFreela.UnitTests/bin/Debug/net8.0
+/DevFreela.UnitTests/obj
